@@ -1,0 +1,6 @@
+<div class="center">
+  <h5>Sélectionnez l'évaluation à faire passer :</h5>
+  <select [(ngModel)]="selectedEval" (ngModelChange)="selectEval()">
+    <option *ngFor="let elt of allExistingEvalTitles">{{elt}}</option>
+  </select>
+</div>

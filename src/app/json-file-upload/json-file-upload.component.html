@@ -1,0 +1,9 @@
+<input
+  style="display: none"
+  type="file" (change)="onFileChanged($event)"
+  #fileInput>
+<div class="importBtns">
+  <button (click)="fileInput.click()">Selectionner un fichier</button>
+  <button (click)="onUpload()">Upload les listes</button>
+</div>
+

@@ -1,0 +1,19 @@
+<h3>Ajouter un étudiant à une liste</h3>
+<h4>Choix de la liste :</h4>
+<div class="column-center">
+  <select [(ngModel)]="selectedList">
+    <option *ngFor="let elt of allExistingListTitles">{{elt}}</option>
+  </select>
+</div>
+<h4>Nom de l'étudiant :</h4>
+
+<div class="column-center">
+  <input type="text" id="nomNewEtu" required [(ngModel)]="nomNewEtu"/>
+</div>
+
+<h4>Prénom de l'étudiant :</h4>
+
+<div class="column-center">
+  <input type="text" id="prenomNewEtu" required [(ngModel)]="prenomNewEtu"/>
+  <button class="spaced-btn" (click)="addEtu()">Ajouter</button>
+</div>

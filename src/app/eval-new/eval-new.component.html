@@ -1,0 +1,17 @@
+<div>
+  <h3>Ajouter une évaluation</h3>
+  <h4>Libellé de l'évaluation :</h4>
+
+  <div class="column-center">
+    <input type="text" [(ngModel)]="evalName">
+  </div>
+
+  <h4>Choisissez vos critères :</h4>
+
+  <div class="column-center">
+    <input type="button" value="Ajouter un critère" (click) = addElement()>
+    <div #criteres> </div>
+    <button class="spaced-btn" (click) = addEval()>Créer l'évaluation</button>
+  </div>
+
+</div>

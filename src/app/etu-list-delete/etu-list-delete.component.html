@@ -1,0 +1,10 @@
+<h3>Supprimer une liste d'étudiant</h3>
+<h4>Choix de la liste :</h4>
+<div class="column-center">
+  <select [(ngModel)]="selectedList">
+    <option *ngFor="let elt of allExistingListTitles">{{elt}}</option>
+  </select>
+
+  <button class="spaced-btn" (click)="deleteList()">Supprimer la liste</button>
+</div>
+

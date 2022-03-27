@@ -1,0 +1,25 @@
+.center{
+  h5{
+    width: auto;
+    margin: 0;
+    margin-right: 10px;
+  }
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column{
+  flex-direction: column;
+}
+.buttonList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width:70%;
+  margin:15px;
+  button{
+    margin:10px;
+  }
+}

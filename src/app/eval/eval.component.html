@@ -1,0 +1,7 @@
+<div class="column">
+  <h2>Espace évaluateur</h2>
+  <app-list (selectedStudent)="evaluatedStudent($event)" (resetStudent)="this.selectedStudent=undefined"></app-list>
+  <app-eval-selector *ngIf="selectedStudent!=undefined && selectedList!=undefined && selectedEval==undefined" (selectedEvalEvent)="evaluatedEval($event)"></app-eval-selector>
+  <app-evaluator *ngIf="selectedStudent!=undefined && selectedList!=undefined && selectedEval!=undefined" [list]="selectedList" [studentIndex]="selectedStudent" [eval]="selectedEval"></app-evaluator>
+  <button class="backBtn" (click)="reloadPage()" *ngIf="selectedList!=undefined">Retour à la séléction d'évaluation</button>
+</div>

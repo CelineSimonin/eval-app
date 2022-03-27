@@ -1,0 +1,22 @@
+<h4>Evaluation : {{ eval }}</h4>
+<h5>Classe : {{ list }} </h5>
+<h5 *ngIf="isEvaluated()" style="color:green;">Etudiant : {{ student.prenom}} {{ student.nom}}</h5>
+<h5 *ngIf="!isEvaluated()" style="color:darkred;">Etudiant : {{ student.prenom}} {{ student.nom}}  -  (Pas encore évalué)</h5>
+
+
+<div class="critere" *ngFor="let elt of student.evals[eval].criteres; let index = index;">
+  <h5>{{elt.title}}</h5>
+  <h6>(min:{{getMin(index)}} max:{{getMax(index)}} moy:{{getMoy(index)}})</h6>
+  <div class="center">
+    <input id="criteria" class="{{index+'criteria'}} {{'criteriaInput'+index}}" type="range" min="0" max="100" value="{{elt.score}}" (change)="saveScore(index,$event)"/>
+    <label class="criteriaIndicator" id="{{index+'criteriaLabel'}}"></label>
+  </div>
+</div>
+
+<div class="directionsBtn center">
+  <button (click)="studentIndex=studentIndex-1; updateStudent();" *ngIf="isPreviousBtnShown()">< Etudiant précédent</button>
+  <button (click)="studentIndex=studentIndex+1; updateStudent();" *ngIf="isNextBtnShown()">Etudiant suivant ></button>
+</div>
+
+
+

@@ -1,0 +1,21 @@
+<h3>Supprimer un étudiant d'un liste</h3>
+<h4>Choix de la liste :</h4>
+
+<div class="column-center">
+  <select [(ngModel)]="selectedList" (ngModelChange)="getStudents()">
+    <option *ngFor="let elt of allExistingListTitles">{{elt}}</option>
+  </select>
+</div>
+
+<div *ngIf="selectedList!=undefined && selectedList!=''">
+  <h4>Choix de l'étudiant :</h4>
+  <div class="column-center">
+    <select [(ngModel)]="selectedStudent">
+    <option *ngFor="let elt of studentsSubList; let index = index;" value="{{index}}">{{elt}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="column-center">
+  <button class="spaced-btn" (click)="deleteEtudiant()" *ngIf="selectedStudent!=undefined">Supprimer l'étudiant</button>
+</div>

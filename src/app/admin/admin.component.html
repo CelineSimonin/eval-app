@@ -1,0 +1,26 @@
+
+<div class="buttonList">
+  <button (click)="currentlyDisplayed=1">Nouvelle liste d'étudiants</button>
+  <button (click)="currentlyDisplayed=2">Supprimer liste d'étudiants</button>
+  <button (click)="currentlyDisplayed=3">Ajouter un étudiant à une liste</button>
+  <button (click)="currentlyDisplayed=4">Supprimer un étudiant d'une liste</button>
+  <button (click)="currentlyDisplayed=5">Nouvelle évaluation</button>
+  <button (click)="currentlyDisplayed=6">Supprimer une évaluation</button>
+
+  <button (click)="currentlyDisplayed=7">Importer des listes d'étudiants en JSON</button>
+  <a class="btn btn-clear" title="Download JSON" [href]="generateDownloadJsonUri()" download="lists.json">Exporter les listes des étudiants (et leur évaluations) en JSON</a>
+</div>
+
+
+
+<app-etu-list-new (update)="resetDisplay()" *ngIf="currentlyDisplayed===1"></app-etu-list-new>
+<app-etu-list-delete (update)="resetDisplay()" *ngIf="currentlyDisplayed===2"></app-etu-list-delete>
+<app-etu-new (update)="resetDisplay()" *ngIf="currentlyDisplayed===3"></app-etu-new>
+<app-etu-delete (update)="resetDisplay()" *ngIf="currentlyDisplayed===4"></app-etu-delete>
+<app-eval-new (update)="resetDisplay()" *ngIf="currentlyDisplayed===5"></app-eval-new>
+<app-eval-delete (update)="resetDisplay()" *ngIf="currentlyDisplayed===6"></app-eval-delete>
+<app-etu-list-import (update)="resetDisplay()" *ngIf="currentlyDisplayed===7"></app-etu-list-import>
+
+<h2 *ngIf="currentlyDisplayed===0">Bienvenue dans la partie gestion des listes d'étudiants & des évaluations !</h2>
+<h5 *ngIf="currentlyDisplayed===0">Que souhaitez-vous faire ?</h5>
+<div class="spacer"></div>

@@ -1,0 +1,14 @@
+<div class="center" *ngIf="selectedList==undefined">
+  <h5>Sélection de liste :</h5>
+  <select [(ngModel)]="selectedList" (ngModelChange)="getStudents()">
+    <option *ngFor="let elt of allListTitles">{{elt}}</option>
+  </select>
+</div>
+
+
+<div class="center column" *ngIf="selectedList">
+  <h5>Liste des étudiants de la liste : </h5>
+  <div class="buttonList">
+    <button *ngFor="let elt of studentsSubList; let index = index;" value="{{index}}" (click)="selectedStudent.emit({'list' : selectedList, 'student': index})">{{elt}}</button>
+  </div>
+</div>

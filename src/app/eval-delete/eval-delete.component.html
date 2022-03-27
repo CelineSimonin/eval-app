@@ -1,0 +1,10 @@
+<h3>Supprimer une évaluation</h3>
+<h4>Choix de l'évaluation :</h4>
+
+<div class="column-center">
+  <select [(ngModel)]="selectedEval">
+    <option *ngFor="let elt of allExistingEvalTitles">{{elt}}</option>
+  </select>
+
+  <button class="spaced-btn" (click)="deleteEval()">Supprimer l'évaluation</button>
+</div>
