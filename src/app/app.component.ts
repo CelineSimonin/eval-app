@@ -10,5 +10,6 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     if(localStorage.getItem('etuLists')==undefined)localStorage.setItem('etuLists','');
+    if(localStorage.getItem('allEvals')==undefined)localStorage.setItem('allEvals','');
   }
 }
